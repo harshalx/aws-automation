@@ -12,15 +12,22 @@ Whether you are on aws or not setup your aws environment to specify your access 
 ## Clone this repo 
 clone this repo to your working environment
 
-## run the demo
-1) Run this command
+## Run the demo
+Run this command
 
 `teraform plan`
 
 Ensure there are no errors
 
-2) Then run
+Then run
+
 `terraform apply`
 
-This will create the entire group of resources right from a VPC to router to internet gateway to your aws instance, install docker on it and then install the relevant container. 
+This will create the following
+
+1. vpc
+2. router
+3. internet gateway
+4. subnet
+5. ec2 instance [with docker installed]
 
