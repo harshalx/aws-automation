@@ -1,0 +1,37 @@
+driver:
+  name: terraform
+
+provisioner:
+  name: terraform
+
+verifier:
+  name: terraform
+#  systems:
+#    - name: ec2-instance
+#      backend: ssh
+#      user: ec2-user
+#      key_files:
+#       - /Users/harshalvaidya/Downloads/hv.pem
+#      hosts_output: vm_public_ip
+
+platforms:
+  - name: aws
+    verifier:
+      systems:
+        - name: aws
+          backend: aws
+          controls:
+            - aws_tests
+
+        - name: ssh
+          backend: ssh
+          key_files: 
+            - /Users/harshalvaidya/Downloads/hv.pem
+          hosts_output: vm_public_ip
+          user: ec2-user
+          controls: 
+            - operating_system
+            - service_checks
+
+suites:
+  - name: example

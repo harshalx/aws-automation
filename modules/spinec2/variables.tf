@@ -1,7 +1,7 @@
 variable "aws_region" {}
 
 provider "aws" {
-        region = "${var.aws_region}"
+        region = var.aws_region
 }
 
 variable "ws_artifacts_version" {
@@ -22,8 +22,12 @@ variable "desired_capacity" {
 
 
 variable "avl_zones" {
-	default = ["us-east-2b"]
+	default = ["ap-southeast-2a"]
 }
+
+variable "security_grp" {}
+variable "ami_id" {}
+
 
 variable "vpc_id" {}
 variable "subnet_cidr" {}
